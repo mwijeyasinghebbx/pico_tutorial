@@ -20,6 +20,7 @@ jobs:
        export LC_ALL=C.UTF-8
        export LANG=C.UTF-8
        export AMPY_PORT=/dev/ttyACM0
+       ampy put lib
        ampy run main.py
     
 workflows:
