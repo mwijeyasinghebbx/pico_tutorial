@@ -1,6 +1,6 @@
 runners:
  local-runner:
-  image: work1-virtualbox:5000/ubuntu-generic
+  image: stag:5000/ubuntu-generic
   
 jobs:   
  build_run_sim:
