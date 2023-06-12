@@ -7,7 +7,6 @@ jobs:
   resource_spec: micro 
   runner: local-runner
   privileged: True
-  device: raspberry-pi-device1
   steps:
    - run:
       name: Setup Environment
