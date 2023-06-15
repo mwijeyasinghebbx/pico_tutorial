@@ -1,3 +1,8 @@
+devices:
+ raspberry-pi-device1:
+  connection: ssh test@user-example-1
+  prompt: "$:" 
+
 runners:
  local-runner:
   image: stag:5000/ubuntu-generic
@@ -7,7 +12,7 @@ jobs:
   resource_spec: micro 
   runner: local-runner
   privileged: True
-  device: raspberry-pi-device1
+  device: raspberry-pi-device1     
   steps:
    - run:
       name: Setup Environment
