@@ -1,5 +1,12 @@
 devices:
  raspberry-pi-device1:
+  setup:
+   - run:
+      name: Setup Environment
+      command: |
+       apt-get -y update
+       apt-get -y install python3-pip
+       pip3 install adafruit-ampy  
   connection: ssh test@user-example-1
   prompt: "$:" 
 
