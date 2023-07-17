@@ -22,7 +22,7 @@ jobs:
   device: raspberry-pi-device1     
   steps:
    - run:
-      name: Setup Environment
+      name: Setup step
       command: |
        apt-get -y update
        apt-get -y install python3-pip
