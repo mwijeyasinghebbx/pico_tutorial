@@ -20,13 +20,6 @@ jobs:
   runner: local-runner
   privileged: True
   device: raspberry-pi-device1     
-  steps:
-   - run:
-      name: Setup step
-      command: |
-       apt-get -y update
-       apt-get -y install python3-pip
-       pip3 install adafruit-ampy
    - run:
       name: Connect to Pico
       command: |
