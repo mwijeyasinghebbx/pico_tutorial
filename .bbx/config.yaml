@@ -19,7 +19,8 @@ jobs:
   resource_spec: micro 
   runner: local-runner
   privileged: True
-  device: raspberry-pi-device1     
+  device: raspberry-pi-device1
+  steps:
    - run:
       name: Connect to Pico
       command: |
