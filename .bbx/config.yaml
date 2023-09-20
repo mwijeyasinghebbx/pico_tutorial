@@ -3,7 +3,7 @@ runners:
   image: stag:5000/ubuntu-generic
   
 jobs:   
- build_run_sim:
+ hello:
   resource_spec: micro 
   runner: local-runner
   privileged: True
@@ -13,20 +13,15 @@ jobs:
       name: Setup Environment
       command: |
        apt-get -y update
-       apt-get -y install python3-pip
-       pip3 install adafruit-ampy
+       apt-get -y install python python3-pip 
+
    - run:
       name: Connect to Pico
+      on-device: True
       command: |
-       export LC_ALL=C.UTF-8
-       export LANG=C.UTF-8
-       export AMPY_PORT=/dev/ttyACM0
-       ampy put lib
-       ampy run main.py
+       print("Hello World")
     
 workflows:
  complete-build-test:
-  triggers:
-   - push
   jobs:
-   - build_run_sim
+   - hello
