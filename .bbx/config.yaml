@@ -21,6 +21,25 @@ jobs:
       on-device: True
       command: |
        print('Hello World')
+
+ hello-backup:
+  resource_spec: micro 
+  runner: local-runner
+  privileged: True
+  device: pico-pi-device2
+  steps:
+   - run:
+      name: Setup Environment
+      command: |
+       apt-get -y update
+       apt-get -y install python python3-pip 
+       pip3 install serial pySerial
+
+   - run:
+      name: Connect to Pico
+      on-device: True
+      command: |
+       print('Hello World')
     
 workflows:
  complete-build-test:
